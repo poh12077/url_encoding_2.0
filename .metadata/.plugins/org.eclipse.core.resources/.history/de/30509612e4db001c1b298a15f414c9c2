@@ -1,0 +1,46 @@
+package encoding;
+
+
+import java.security.NoSuchAlgorithmException;
+import java.security.MessageDigest;
+import java.util.Base64; 
+import java.util.Base64.Decoder; 
+import java.util.Base64.Encoder;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import java.util.Random;
+
+public class Main {
+	 public static void main(String[] args) throws Exception  {
+	        
+	    	String url="/a/b/c/d/file_name";
+	    	String password = "1234";
+	    	int timeout=60;
+	    	int skip_path=0;
+	    	int except_file=0;
+	    	
+	    	Random random = new random();
+	    	
+	    	JSONObject json = new JSONObject();
+	    	json.put("seq", random.nextInt(100) );
+	    	json.put("path", url);
+	    	json.put("exp", timeout);
+	    	
+	    	String json_string = json.toString();
+	    	
+			/*
+			 * SHA256 sha256 = new SHA256(); String cryptogram = sha256.encrypt(password);
+			 * // System.out.println(cryptogram.equals(sha256.encrypt(password))); AES256
+			 * aes256 = new AES256(); // String text = "!! Hello World !!"; String
+			 * cipherText = aes256.encrypt(cryptogram); // System.out.println(cryptogram);
+			 * //System.out.println(cipherText); //
+			 * System.out.println(aes256.decrypt(cipherText)); String encodedString =
+			 * Base64.getEncoder().encodeToString(cipherText.getBytes()); //
+			 * System.out.println(encodedString); //System.out.println(encodedString);
+			 * byte[] decodedBytes = Base64.getDecoder().decode(encodedString); String
+			 * decodedString = new String(decodedBytes); System.out.println(decodedString);
+			 */
+	        
+	       
+	    }
+}
