@@ -1,9 +1,6 @@
 package encoding;
 
 import java.util.Random;
-
-import javax.sound.midi.Sequence;
-
 import org.json.simple.JSONObject;
 
 public class Utilities {
@@ -29,7 +26,7 @@ public class Utilities {
 	    	json.put("path", path);
 	    	json.put("exp", exp);
 	    	*/
-		 	System.out.println(path);
+		 	
 	    	//test
 	    	json.put("seq", 1 );
 	    	json.put("path", path);
@@ -45,29 +42,30 @@ public class Utilities {
 	 static String json_string_generator(String url, int timeout, int skip_path, int except_file) {
 		 	//seq 
 		 	Random random = new Random();
-	    	int seq=random.nextInt(100);
+	    	
 		 	//path
 		 	String path="/";
 		 	String[] url_array = url.split("/");
 		 	for(int i = 1 + skip_path; i < url_array.length-except_file; i++) {
 		 		path +=url_array[i]+"/";
 		 	}
-		 	path = path.substring(0, path.length()-1);
+		 	
 		 	//exp
 		 	long exp = System.currentTimeMillis() / 1000;
 		 	exp+=timeout;
 		 	
+		 	/*
+	    	json.put("seq", random.nextInt(100) );
+	    	json.put("path", path);
+	    	json.put("exp", exp);
+	    	*/
+		 	
 	    	//test
-	    	seq =1;
-	    	exp =1;
-		 	String json_string = "{ \"seq\": " + Integer.toString(seq) +", \"path\": \"" + path + "\", \"exp\": " + Long.toString(exp) +" }";              
+	    	//String output = "{ "seq": 1, "path": " + path ;
 	    	
-	    	return json_string;
+	    	return "";
 	    	
 		  }
-	 
-	 
-	 
 	 
 	 void input() {
 		 

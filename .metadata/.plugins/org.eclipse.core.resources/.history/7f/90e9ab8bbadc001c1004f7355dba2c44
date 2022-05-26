@@ -52,7 +52,7 @@ public class Utilities {
 		 	for(int i = 1 + skip_path; i < url_array.length-except_file; i++) {
 		 		path +=url_array[i]+"/";
 		 	}
-		 	path = path.substring(0, path.length()-1);
+		 	
 		 	//exp
 		 	long exp = System.currentTimeMillis() / 1000;
 		 	exp+=timeout;
@@ -60,9 +60,9 @@ public class Utilities {
 	    	//test
 	    	seq =1;
 	    	exp =1;
-		 	String json_string = "{ \"seq\": " + Integer.toString(seq) +", \"path\": \"" + path + "\", \"exp\": " + Long.toString(exp) +" }";              
+		 	String output = "{ \"seq\": " + Integer.toString(seq) +", \"path\": " + path + ", \"exp\": " + Long.toString(exp) +" }";              
 	    	
-	    	return json_string;
+	    	return output;
 	    	
 		  }
 	 

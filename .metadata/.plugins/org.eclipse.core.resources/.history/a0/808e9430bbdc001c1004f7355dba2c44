@@ -60,9 +60,9 @@ public class Utilities {
 	    	//test
 	    	seq =1;
 	    	exp =1;
-		 	String json_string = "{ \"seq\": " + Integer.toString(seq) +", \"path\": \"" + path + "\", \"exp\": " + Long.toString(exp) +" }";              
+		 	String output = "{ \"seq\": " + Integer.toString(seq) +", \"path\": \"" + path + "\", \"exp\": " + Long.toString(exp) +" }";              
 	    	
-	    	return json_string;
+	    	return output;
 	    	
 		  }
 	 

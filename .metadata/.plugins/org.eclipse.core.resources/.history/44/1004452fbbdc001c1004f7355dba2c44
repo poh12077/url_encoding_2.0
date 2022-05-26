@@ -25,10 +25,9 @@ public class Main {
 		//String json_string = json.toString();
 		//String json_string = json.toJSONString();
 		
-		//json_string
+		//test
 		String json_string = Utilities.json_string_generator(url, timeout, skip_path, except_file); 
 		System.out.println(json_string);
-		
 		SHA256 sha256 = new SHA256();
 		cipher_key_e = sha256.encrypt(key);
 
