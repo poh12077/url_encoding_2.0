@@ -13,8 +13,8 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		String url = "/a/b/c/d/file_name";
-		String key = "abcdefghi";
-		int timeout = 360000;
+		String key = "1234";
+		int timeout = 60;
 		int skip_path = 1;
 		int except_file = 1;
 		byte[] cipher_key_e;

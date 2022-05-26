@@ -13,7 +13,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		String url = "/a/b/c/d/file_name";
-		String key = "abcdefghi";
+		String key = "1234";
 		int timeout = 360000;
 		int skip_path = 1;
 		int except_file = 1;

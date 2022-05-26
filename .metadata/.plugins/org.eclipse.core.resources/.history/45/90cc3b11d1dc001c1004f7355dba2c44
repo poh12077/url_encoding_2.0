@@ -21,8 +21,8 @@ public class AES256 {
 	        cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivParamSpec);
 
 	        byte[] encrypted = cipher.doFinal(text.getBytes("UTF-8"));
-	       // return Base64.getEncoder().encodeToString(encrypted);
-	        return Base64.getUrlEncoder().withoutPadding().encodeToString( encrypted );
+	        //return Base64.getEncoder().encodeToString(encrypted);
+	        return Base64.getUrlEncoder().encodeToString(encrypted);
 	    }
 
 	    public String decrypt(String cipherText, byte[] key) throws Exception {
