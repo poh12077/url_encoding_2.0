@@ -15,7 +15,7 @@ public class Main {
 		String url = "/a/b/c/d/file_name";
 		String key = "abcdefghi";
 		int timeout = 360000;
-		int skip_path = 2;
+		int skip_path = 1;
 		int except_file = 0;
 		byte[] cipher_key_e;
 		Utilities utilities = new Utilities();
