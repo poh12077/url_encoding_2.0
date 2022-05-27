@@ -70,6 +70,7 @@ public class Utilities {
 		 		skiped_path += url_array[i]+"/";
 		 	}
 		 	for(int i = 1 + skip_path; i < url_array.length-except_file; i++) {
+		 		
 		 		path +=url_array[i]+"/";
 		 	}
 		 	path = path.substring(0, path.length()-1);
@@ -77,6 +78,7 @@ public class Utilities {
 		 	if(except_file!=0) {
 		 		file_name = "/"+ url_array[url_array.length-1];
 		 	}
+		 	
 		 	
 		 	//exp
 		 	long exp = System.currentTimeMillis() / 1000;
@@ -94,9 +96,7 @@ public class Utilities {
 	 
 	 void print_result(String cipher_text, Output output) {
 		 String result= output.skiped_path + cipher_text + output.file_name;
-		 
-		 System.out.println(output.json_string);
-		 System.out.println(output.json_string.length());
+
 		 System.out.println(result);
 	 }
 	

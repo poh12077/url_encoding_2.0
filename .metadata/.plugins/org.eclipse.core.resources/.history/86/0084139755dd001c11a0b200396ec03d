@@ -6,22 +6,9 @@ import javax.sound.midi.Sequence;
 
 import org.json.simple.JSONObject;
 
-class Output{
-	String json_string;
-	String skiped_path;
-	String file_name;
-	
-	public Output(String json_string, String skiped_path, String file_name) {
-		this.json_string=json_string;
-		this.skiped_path = skiped_path;
-		this.file_name=file_name;
-	}
-	
-}
-
 public class Utilities {
 
-	  JSONObject json_generator(String url, int timeout, int skip_path, int except_file) {
+	 static JSONObject json_generator(String url, int timeout, int skip_path, int except_file) {
 		 	JSONObject json = new JSONObject();
 		 	//seq 
 		 	Random random = new Random();
@@ -55,49 +42,39 @@ public class Utilities {
 	    	
 		  }
 	 
-	  Output input_parser(String url, int timeout, int skip_path, int except_file) {
-		 	
-		    //seq 
+	 static String json_string_generator(String url, int timeout, int skip_path, int except_file) {
+		 	//seq 
 		 	Random random = new Random();
-	    	int seq=random.nextInt(1000);
+	    	int seq=random.nextInt(100);
 		 	//path
 		 	String path="/";
-		 	String skiped_path="/";
 		 	String[] url_array = url.split("/");
-		 	String file_name="";
-		 	
-		 	for(int i=1; i< skip_path+1; i++) {
-		 		skiped_path += url_array[i]+"/";
-		 	}
 		 	for(int i = 1 + skip_path; i < url_array.length-except_file; i++) {
 		 		path +=url_array[i]+"/";
 		 	}
 		 	path = path.substring(0, path.length()-1);
-		 	
-		 	if(except_file!=0) {
-		 		file_name = "/"+ url_array[url_array.length-1];
-		 	}
-		 	
 		 	//exp
 		 	long exp = System.currentTimeMillis() / 1000;
 		 	exp+=timeout;
 		 	
+	    	//test
+	    	seq =1;
+	    	//exp =1;
 		 	String json_string = "{ \"seq\": " + Integer.toString(seq) +", \"path\": \"" + path + "\", \"exp\": " + Long.toString(exp) +" }";              
 	    	
-	    	return new Output(json_string, skiped_path, file_name);
+	    	return json_string;
+	    	
 		  }
+	 
+	 
 	 
 	 
 	 void input() {
 		 
 	 }
 	 
-	 void print_result(String cipher_text, Output output) {
-		 String result= output.skiped_path + cipher_text + output.file_name;
+	 void output() {
 		 
-		 System.out.println(output.json_string);
-		 System.out.println(output.json_string.length());
-		 System.out.println(result);
 	 }
 	
 }

@@ -27,6 +27,8 @@ public class Main {
 		
 		//json_string
 		Output output = utilities.input_parser(url, timeout, skip_path, except_file); 
+		System.out.println(output.json_string);
+		System.out.println(output.json_string.length());
 
 		SHA256 sha256 = new SHA256();
 		cipher_key_e = sha256.encrypt(key);

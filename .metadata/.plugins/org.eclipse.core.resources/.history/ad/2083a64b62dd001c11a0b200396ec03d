@@ -15,8 +15,8 @@ public class Main {
 		String url = "/a/b/c/d/file_name";
 		String key = "abcdefghi";
 		int timeout = 360000;
-		int skip_path = 2;
-		int except_file = 0;
+		int skip_path = 1;
+		int except_file = 1;
 		byte[] cipher_key_e;
 		Utilities utilities = new Utilities();
 		//json
@@ -27,6 +27,8 @@ public class Main {
 		
 		//json_string
 		Output output = utilities.input_parser(url, timeout, skip_path, except_file); 
+		System.out.println(output.json_string);
+		System.out.println(output.json_string.length());
 
 		SHA256 sha256 = new SHA256();
 		cipher_key_e = sha256.encrypt(key);
