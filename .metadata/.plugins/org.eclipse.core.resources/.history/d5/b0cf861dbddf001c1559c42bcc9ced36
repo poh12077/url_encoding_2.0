@@ -1,5 +1,6 @@
 package encoding;
 
+import java.util.Arrays;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -7,23 +8,31 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class AES256 {
 	 public static String alg = "AES/CBC/PKCS5Padding";
-	    private final String iv_string = "SOLBOX_ENC_URL"; //14 byte
+	   // private final String key = "01234567890123456789012345678901";
+	    private final String iv_string = "SOLBOX_ENC_URL"; // 16byte
 	    private byte[] iv = new byte[16]; 
 	    
 	    public AES256() {
-	    	System.arraycopy( iv_string.getBytes(), 0, iv, 0, iv_string.getBytes().length );
+	    	System.arraycopy(iv, 0, iv_string.getBytes(), 0, iv_string.getBytes().length );
+	    
 	    }
 	    
 	    public String encrypt(String text, byte[] key) throws Exception {
+	    	 
+			/*
+			 * byte[] iv_copy = iv.getBytes(); for(int i=0; i< iv_copy.length;i++) {
+			 * iv_byte[i]=iv_copy[i]; }
+			 */
 	    	
 	        Cipher cipher = Cipher.getInstance(alg);
 	        SecretKeySpec keySpec = new SecretKeySpec(key, "AES");
+	        //IvParameterSpec ivParamSpec = new IvParameterSpec(iv.getBytes());
 	        IvParameterSpec ivParamSpec = new IvParameterSpec(iv);
 	        cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivParamSpec);
 
 	        byte[] encrypted = cipher.doFinal(text.getBytes("UTF-8"));
-	        //base64 safe
-	        return Base64.getUrlEncoder().withoutPadding().encodeToString( encrypted ); 
+	       // return Base64.getEncoder().encodeToString(encrypted);
+	        return Base64.getUrlEncoder().withoutPadding().encodeToString( encrypted );
 	    }
 
 		/*
