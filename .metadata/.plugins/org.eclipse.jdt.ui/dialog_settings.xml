@@ -101,6 +101,8 @@
 		<item key="JarManifestWizardPage.MANIFEST_LOCATION" value=""/>
 		<item key="JarManifestWizardPage.SEAL_JAR" value="false"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\young hwa park\Desktop\workspace\url_encoding.jar"/>
+			<item value="C:\Users\young hwa park\Desktop\workspace\ue.jar"/>
 			<item value="C:\Users\young hwa park\Desktop\workspace\test.jar"/>
 			<item value="C:\Users\young hwa park\Desktop\nana.jar"/>
 		</list>

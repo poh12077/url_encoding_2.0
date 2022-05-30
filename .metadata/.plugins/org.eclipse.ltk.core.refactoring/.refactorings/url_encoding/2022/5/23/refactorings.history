@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;encoding.Url&apos; to &apos;Url_encoding&apos;&#x0D;&#x0A;- Original project: &apos;url_encoding&apos;&#x0D;&#x0A;- Original element: &apos;encoding.Url&apos;&#x0D;&#x0A;- Renamed element: &apos;encoding.Url_encoding&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Url&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;encoding{Url.java[Url" matchStrategy="1" name="Url_encoding" qualified="false" references="true" similarDeclarations="false" stamp="1653888671792" textual="false" version="1.0"/>
+</session>

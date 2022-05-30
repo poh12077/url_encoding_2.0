@@ -91,7 +91,6 @@ class Utilities {
 		 	}
 		 	
 		 	//exp
-		 	//second
 		 	long exp = System.currentTimeMillis() / 1000;
 		 	exp+=timeout;
 		 	

@@ -10,7 +10,7 @@ class Output{
 	String skiped_path;
 	String file_name;
 	
-	Output(String json_string, String skiped_path, String file_name) throws Exception {
+	public Output(String json_string, String skiped_path, String file_name) throws Exception {
 		this.json_string=json_string;
 		this.skiped_path = skiped_path;
 		this.file_name=file_name;
@@ -18,7 +18,7 @@ class Output{
 	
 }
 
-class Utilities {
+public class Utilities {
 
 	  JSONObject json_generator(String url, int timeout, int skip_path, int except_file) {
 		 	JSONObject json = new JSONObject();
@@ -54,7 +54,7 @@ class Utilities {
 	    	
 		  }
 	 
-	 Output input_parser(String url, int timeout, int skip_path, int except_file) throws Exception {
+	  Output input_parser(String url, int timeout, int skip_path, int except_file) throws Exception {
 		 	//exception handling
 		  	if(timeout<=0) {
 		  		throw new Exception("timeout must be greater than 0");
@@ -91,7 +91,6 @@ class Utilities {
 		 	}
 		 	
 		 	//exp
-		 	//second
 		 	long exp = System.currentTimeMillis() / 1000;
 		 	exp+=timeout;
 		 	

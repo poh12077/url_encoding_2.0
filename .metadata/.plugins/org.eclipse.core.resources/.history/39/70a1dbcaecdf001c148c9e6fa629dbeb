@@ -3,8 +3,8 @@ package encoding;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
- class SHA256 {
-	   byte[] encrypt(String text) throws NoSuchAlgorithmException {
+public class SHA256 {
+	  public byte[] encrypt(String text) throws NoSuchAlgorithmException {
 	        MessageDigest md = MessageDigest.getInstance("SHA-256");
 	        md.update(text.getBytes());
 

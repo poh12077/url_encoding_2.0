@@ -11,7 +11,7 @@ public class Main {
 			String key = "abcdefghi";
 			int timeout = 3;
 			int skip_path = 1;
-			int except_file = 1;
+			int except_file = -1;
 			byte[] cipher_key_e;
 			Utilities utilities = new Utilities();
 			
