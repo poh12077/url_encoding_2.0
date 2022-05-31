@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;encoding.utilities&apos; to &apos;Utilities&apos;&#x0D;&#x0A;- Original project: &apos;url_encoding&apos;&#x0D;&#x0A;- Original element: &apos;encoding.utilities&apos;&#x0D;&#x0A;- Renamed element: &apos;encoding.Utilities&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;utilities&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;encoding{utilities.java[utilities" matchStrategy="1" name="Utilities" qualified="false" references="true" similarDeclarations="false" stamp="1653463719544" textual="false" version="1.0"/>
-</session>
