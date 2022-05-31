@@ -53,6 +53,10 @@ class Facilities {
 			url = "/" + url;
 		}
 		
+		if (skipDepth < 0) {
+			throw new Exception("skipDepth must be 0 or more");
+		}
+		
 		// seq
 		Random random = new Random();
 		int seq = random.nextInt(1000);
@@ -64,10 +68,6 @@ class Facilities {
 		int fileNameExcepted=0;
 		if(isFileNameExcepted) {
 			fileNameExcepted=1;
-		}
-		
-		if (skipDepth < 0 ||  urlArray.length-2 < skipDepth ) {
-			throw new Exception("skipDepth must be more than 0 and less than path depth ");
 		}
 		
 		for (int i = 1; i < skipDepth + 1; i++) {

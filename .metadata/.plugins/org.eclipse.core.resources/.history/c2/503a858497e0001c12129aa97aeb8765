@@ -21,11 +21,11 @@ class Facilities {
 
 	/*
 	 * JSONObject jsonGenerator(String url, int timeout, int skipDepth, int
-	 * fileNameExcepted) { JSONObject json = new JSONObject(); //seq Random random = new
+	 * exceptFile) { JSONObject json = new JSONObject(); //seq Random random = new
 	 * Random();
 	 * 
 	 * //path String path="/"; String[] urlArray = url.split("/"); for(int i = 1 +
-	 * skipDepth; i < urlArray.length-fileNameExcepted; i++) { path +=urlArray[i]+"/"; }
+	 * skipDepth; i < urlArray.length-exceptFile; i++) { path +=urlArray[i]+"/"; }
 	 * 
 	 * //exp long exp = System.currentTimeMillis() / 1000; exp+=timeout;
 	 * 
@@ -53,6 +53,10 @@ class Facilities {
 			url = "/" + url;
 		}
 		
+		if (skipDepth < 0) {
+			throw new Exception("skipDepth must be 0 or more");
+		}
+		
 		// seq
 		Random random = new Random();
 		int seq = random.nextInt(1000);
@@ -61,24 +65,20 @@ class Facilities {
 		String skippedPath = "/";
 		String[] urlArray = url.split("/");
 		String fileName = "";
-		int fileNameExcepted=0;
+		int exceptFile=0;
 		if(isFileNameExcepted) {
-			fileNameExcepted=1;
-		}
-		
-		if (skipDepth < 0 ||  urlArray.length-2 < skipDepth ) {
-			throw new Exception("skipDepth must be more than 0 and less than path depth ");
+			exceptFile=1;
 		}
 		
 		for (int i = 1; i < skipDepth + 1; i++) {
 			skippedPath += urlArray[i] + "/";
 		}
-		for (int i = 1 + skipDepth; i < urlArray.length - fileNameExcepted; i++) {
+		for (int i = 1 + skipDepth; i < urlArray.length - exceptFile; i++) {
 			path += urlArray[i] + "/";
 		}
 		path = path.substring(0, path.length() - 1);
 
-		if (fileNameExcepted != 0) {
+		if (exceptFile != 0) {
 			fileName = "/" + urlArray[urlArray.length - 1];
 		}
 

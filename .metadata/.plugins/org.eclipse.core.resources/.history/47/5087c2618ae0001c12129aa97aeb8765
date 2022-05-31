@@ -2,12 +2,12 @@ package com.solbox.nana;
 
 public class Utilities {
 
-   static public String urlEncorder(String url, String key, int timeout, int skipDepth, boolean isFileNameExcepted) {
+   static public String urlEncorder(String url, String key, int timeout, int skipDepth, int exceptFile) {
 		try {
 			
 			byte[] cipherKey;
 			Facilities facilities = new Facilities();
-			DataSet dataSet = facilities.inputParser(url, timeout, skipDepth, isFileNameExcepted);
+			DataSet dataSet = facilities.inputParser(url, timeout, skipDepth, exceptFile);
 
 			SHA256 sha256 = new SHA256();
 			cipherKey = sha256.encrypt(key);
