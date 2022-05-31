@@ -188,13 +188,13 @@
 	</section>
 	<section name="ReplaceDialog2">
 		<list key="replace_with">
+			<item value="fileNameExcepted"/>
 			<item value="isFileNameExcepted"/>
 			<item value="ivString"/>
 			<item value="urlArray"/>
 			<item value="cipherText"/>
 			<item value="fileName"/>
 			<item value="skippedPath"/>
-			<item value="skipDepth"/>
 		</list>
 	</section>
 	<section name="">
